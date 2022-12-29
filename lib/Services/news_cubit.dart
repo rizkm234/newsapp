@@ -29,6 +29,13 @@ class NewsCubit extends Cubit<NewsState> {
 
   String Category = 'business';
 
+  List categories = ['business' , 'science' , 'sports'];
+
+  void changeCategories(int index){
+    Category = categories[index];
+    emit(changeCategoriesState());
+  }
+
 
   void changeScreens (int index){
     currentIndex = index ;
@@ -76,5 +83,7 @@ class NewsCubit extends Cubit<NewsState> {
         }
       }
   }
+
+
 
 }

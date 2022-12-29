@@ -7,3 +7,5 @@ class NewsInitial extends NewsState {}
 class changedScreen extends NewsState {}
 class getDataState extends NewsState {}
 class changeThemeState extends NewsState {}
+class changeCategoriesState extends NewsState {}
+class changeBtnBarColorState extends NewsState {}

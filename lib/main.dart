@@ -10,8 +10,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await cacheHelper.init();
 
-  bool? isdark = cacheHelper.getData(key: 'isDark');
-  runApp( MyApp(isdark!));
+  bool? isDark = cacheHelper.getData(key: 'isDark');
+  runApp( MyApp(isDark!));
 }
 
 class MyApp extends StatelessWidget {
@@ -46,13 +46,15 @@ class MyApp extends StatelessWidget {
               bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 elevation: 20,
                 backgroundColor: Colors.white,
-                selectedItemColor: Colors.blue,
+                selectedItemColor: Colors.black,
                 unselectedItemColor: Colors.black,
 
               ),
               textTheme: const TextTheme(
-                  bodyText1: TextStyle(fontSize: 18, color: Colors.black),
-                  headline5: TextStyle(fontSize: 25, color: Colors.black)
+                  bodyText1: TextStyle(fontSize: 15, color: Colors.black),
+                  bodyText2: TextStyle(fontSize: 18, color: Colors.black),
+                  headline5: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold)
+
               ),
               primarySwatch: Colors.blue,
             ),
@@ -70,16 +72,17 @@ class MyApp extends StatelessWidget {
                     fontSize: 20, fontWeight: FontWeight.bold),
                 iconTheme: IconThemeData(color: Colors.white),
               ),
-              bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              bottomNavigationBarTheme:  const BottomNavigationBarThemeData(
                 elevation: 20,
                 backgroundColor: Colors.black26,
-                selectedItemColor: Colors.blue,
+                selectedItemColor: Colors.white,
                 unselectedItemColor: Colors.white,
 
               ),
               textTheme: const TextTheme(
-                  bodyText1: TextStyle(fontSize: 18, color: Colors.white),
-                  headline5: TextStyle(fontSize: 25, color: Colors.white)
+                  bodyText1: TextStyle(fontSize: 15, color: Colors.white),
+                  bodyText2: TextStyle(fontSize: 18, color: Colors.white),
+                  headline5: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold)
               ),
 
             ),

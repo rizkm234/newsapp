@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsapp/Constants/cache_helper.dart';
+import 'package:newsapp/Constants/custom_screen.dart';
 import 'package:newsapp/Screens/search_screen.dart';
 import 'package:newsapp/Services/news_cubit.dart';
 
@@ -34,24 +35,24 @@ class NewsScreen extends StatelessWidget {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-            // selectedItemColor: Colors.blue,
-            // unselectedItemColor: Colors.black,
             showUnselectedLabels: true,
             currentIndex: cubit.currentIndex,
             onTap: (int index) {
-              cubit.changeScreens(index);
+              // cubit.changeScreens(index);
+              // cubit.changeBtnBarColor();
+              cubit.changeCategories(index);
             },
-            items: const [
+            items:  const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.business), label: 'Business',),
             BottomNavigationBarItem(
                 icon: Icon(Icons.science), label: 'Science'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.sports_baseball), label: 'Sports'),
-            // BottomNavigationBarItem(
-            //     icon: Icon(Icons.settings), label: 'Settings'),
           ]),
-          body: cubit.screens[cubit.currentIndex],
+          body: customScreen(cubit: cubit)
+
+          // cubit.screens[cubit.currentIndex],
         );
       },
     );
